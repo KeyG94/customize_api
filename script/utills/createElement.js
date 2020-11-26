@@ -1,18 +1,19 @@
 import { addToFavorites } from './favorites.js';
 import { isInStorage } from './storage.js';
 
-let root = document.querySelector('#root');
+let root = document.querySelector('#li-root');
 let output = '';
 
 export const createElement = (info) => {
-	output += `<li>
-                    <h3>${info.title}</h3>
-                    <h6>${info.author}</h6>
-                    <p>${info.summary}</p>
-                    <i class="${isInStorage(info.id)
-						? 'fa'
-						: 'far'} fa-heart" data-id="${info.id}" data-title="${info.title}" data-author="${info.author}" data-summary="${info.summary}"></i>
-               <li>`;
+    output += `  
+    <li class="card-element"> 
+        <h2 class="card-title">${info.title}</h2>
+        <h5 class="card-author">${info.author}</h5>
+        <p class="card-summary">${info.summary}</p>
+        <i class="${isInStorage(info.id)
+		    ? 'fa'
+		    : 'far'} fa-heart" data-id="${info.id}" data-title="${info.title}" data-author="${info.author}" data-summary="${info.summary}"></i>
+    <li>`;
 
 	root.innerHTML = output;
 	addClickEvent();

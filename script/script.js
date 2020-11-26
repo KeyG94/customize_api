@@ -1,4 +1,3 @@
-import getApi from "./utills/fetch.js";
+import getApi from './utills/fetch.js';
 
 getApi();
-

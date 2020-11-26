@@ -7,16 +7,26 @@
     <title>Favorite</title>
 </head>
 <body>
+    <div class="content-wrap">
+        <nav class="navigation navigation-home">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">Favorite</a></li>
+            </ul>
+        </nav>
+        <div class="btn-container">
+            <button id="clear-btn">Clear All</button>
+        </div>
+        <div class="list-container">
+            <ul id="li-root" class="cards"></ul>
+        </div>
+    </div>
     <!--Content-->
-    <nav>
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="#">Favorite</a></li>
-        </ul>
-    </nav>
-    <div id="root"></div>
-    <div id="favorite-root"></div>
-    <button id="clear-btn">Clear All</button>
+    <footer>
+        <div>
+            Glenn Key
+        </div>
+    </footer>
     <script src="./script/components/loadFavorites.js" type="module"></script>
 </body>
 </html>
