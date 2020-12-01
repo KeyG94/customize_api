@@ -1,4 +1,6 @@
 import { listKey } from './settings.js';
+import { listKeyUser, tokenKey } from './settings.js';
+
 
 export const checkStorage = () => {
 	const favoriteList = localStorage.getItem(listKey);
@@ -11,3 +13,25 @@ export const saveToStorage = (favorite) => {
 	localStorage.setItem(listKey, JSON.stringify(favorite));
 	console.log(favorite);
 };
+
+
+export const saveUser = (user) => {
+    localStorage.setItem(listKeyUser, JSON.stringify(user));
+}
+
+export const saveToken = (token) => {
+    localStorage.setItem(tokenKey, token)
+}
+
+export const getUser = () => {
+    return getFromStorage(listKeyUser);
+}   
+
+const getFromStorage = (key) => {
+    const value = localStorage.getItem(key)
+    if(!value){
+        return [];
+    }
+
+    return JSON.parse(value)
+}

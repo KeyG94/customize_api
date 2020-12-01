@@ -1,3 +1,5 @@
-import getApi from './utills/fetch.js';
+import getApi, { signInUser } from './utills/fetch.js';
 
 getApi();
+
+signInUser()

@@ -2,6 +2,7 @@ import { baseUrl } from './baseUrl.js';
 import { articles } from './settings.js';
 import { createElement, createFilterList } from './createElement.js';
 import { displayMessage, errorMessage } from './error.js';
+import { getUser } from './storage.js';
 
 export default getApi;
 async function getApi(){
@@ -19,4 +20,26 @@ async function getApi(){
     } catch (error){
         displayMessage(error, errorMessage)
     };
+};
+
+export const signInUser = () => {
+    const value = getUser();
+    const adminButton = document.querySelector('#admin-nav');
+    
+    if(value.length === 0){
+        adminButton.innerHTML = 'Login';
+    } else {
+        adminButton.innerHTML = `${value.username}`;
+    };
+
+    adminButton.addEventListener("click", function(){
+        console.log(value)
+        if(value.length === 0){
+            location.href = './login.html';
+        } else {
+            location.href = './admin.html';
+        }
+
+    })
+
 };

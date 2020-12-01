@@ -42,6 +42,7 @@ body{
 
 .content-wrap{
     min-height: 90vh;
+    min-width: 100vw;
 }
 
 li{
@@ -169,7 +170,7 @@ footer{
     margin: 2em;
 }
 
-#clear-btn{
+#clear-btn, .btn-login{
     width: 100px;
     padding: 1em;
     font-weight: 600;
@@ -179,17 +180,103 @@ footer{
     transition: .5s ease;
 }
 
-#clear-btn:hover{
+#clear-btn:hover, .btn-login:hover{
     background-color: rgb(190, 190, 190);
     letter-spacing: 2px;
     outline: none;
 }
 
-#clear-btn:active{
+#clear-btn:active, .btn-login:active{
     background-color: rgb(228, 228, 228);
     outline: none;
 }
 
-#clear-btn:visited, #clear-btn:focus, a{
+#clear-btn:visited, #clear-btn:focus, a, .btn-login:focus, .form-object:focus{
     outline: none;
+}
+
+.form-container{
+    max-width: 75vw;
+    margin: 150px auto;
+    padding: 3em 0;
+    display: block;
+    border-right: 1px solid rgb(228, 228, 228);
+    border-left: 1px solid rgb(228, 228, 228);
+    transition: 1s ease-in;
+    position: relative;
+}
+
+.form-input-container{
+    width: 100%;
+}
+
+.form-input{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-header{
+    text-align: center;
+}
+
+.form-object-message{
+    display: block;
+    
+}
+
+.form-element{
+    max-width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+
+.form-object{
+    padding: .7em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 15px;
+    background-color: rgb(228, 228, 228);
+    border: none;
+}
+
+.form-object:focus{
+    background-color: rgb(255, 255, 255);
+}
+
+label{
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+}
+
+.btn-login{
+    margin-top: 20px;
+    min-width: 100px;
+    outline: none;
+}
+
+.back-btn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#error-message{
+    margin-top: 2em;
+    color: rgb(255, 52, 52);
+}
+
+#admin-nav{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    letter-spacing: .6px;
+    color:  rgb(228, 228, 228);
+    transition: .2s ease;
+}
+
+#admin-nav:hover{
+    color:  white;
+    cursor: pointer;
 }
