@@ -12,7 +12,7 @@ import { articles } from '../utills/settings.js';
         json.forEach(title => {
             contentList.innerHTML += `    
             <div class="card-container">
-                <a href="">
+                <a href="./edit.html?id=${title.id}">
                     <li class=""> 
                         <h2 class="">${title.title}</h2>
                         <h5 class="">${title.author}</h5>
