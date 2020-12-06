@@ -5,41 +5,38 @@ import { displayMessage, errorMessage } from './error.js';
 import { getUser } from './storage.js';
 
 export default getApi;
-async function getApi(){
-    try{
-        const fetchApi = await fetch(baseUrl + articles);
-        const data = await fetchApi.json();
-        const searchBox = document.querySelector("#search");
-        
-        data.forEach(item => createElement(item));
+async function getApi() {
+	try {
+		const fetchApi = await fetch(baseUrl + articles);
+		const data = await fetchApi.json();
+		const searchBox = document.querySelector('#search');
 
-        searchBox.addEventListener("keyup", function(){
-            createFilterList(data, searchBox.value)
-        })
+		data.forEach((item) => createElement(item));
 
-    } catch (error){
-        displayMessage(error, errorMessage)
-    };
-};
+		searchBox.addEventListener('keyup', function() {
+			createFilterList(data, searchBox.value);
+		});
+	} catch (error) {
+		displayMessage(error, errorMessage);
+	}
+}
 
 export const signInUser = () => {
-    const value = getUser();
-    const adminButton = document.querySelector('#admin-nav');
-    
-    if(value.length === 0){
-        adminButton.innerHTML = 'Login';
-    } else {
-        adminButton.innerHTML = `${value.username}`;
-    };
+	const value = getUser();
+	const adminButton = document.querySelector('#admin-nav');
 
-    adminButton.addEventListener("click", function(){
-        console.log(value)
-        if(value.length === 0){
-            location.href = './login.html';
-        } else {
-            location.href = './admin.html';
-        }
+	if (value.length === 0) {
+		adminButton.innerHTML = 'Login';
+	} else {
+		adminButton.innerHTML = `${value.username}`;
+	}
 
-    })
-
+	adminButton.addEventListener('click', function() {
+		console.log(value);
+		if (value.length === 0) {
+			location.href = './login.html';
+		} else {
+			location.href = './admin.html';
+		}
+	});
 };

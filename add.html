@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/edit.css">
-    <title>admin | edit</title>
+    <title>Document</title>
 </head>
 <body>
     <div class="container">
         <a href="./admin.html">Go back</a>
-        <h1>Edit</h1>
-        <div class="loader">Loading item...</div>
+        <h1>Add new content</h1>
         <div id="error"></div>
-        <form class="form-edit-list">
+        <form class="form-add-list">
             <div class="form-object">
                 <label for="title">Title</label>
                 <input type="text" id="title" />
@@ -23,19 +22,16 @@
             </div>
             <div class="form-object">
                 <label for="summary">Summary</label>
-                <textarea id="summary" rows="5"></textarea>
+                <textarea id="summary"></textarea>
             </div>
             <div class="form-object">
                 <input id="id" type="hidden">
             </div>
             <div class="form-object">
-                <button id="update" type="submit">Update</button>
-            </div>
-            <div class="form-object">
-                <button id="delete" type="submit">Delete</button>
+                <button id="add" type="submit">Add</button>
             </div>
         </form>
     </div>
-    <script src="./script/admin/edit.js" type="module"></script>
+    <script src="./script/admin/add.js" type="module"></script>
 </body>
 </html>

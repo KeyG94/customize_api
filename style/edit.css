@@ -1,15 +1,72 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
-.container{
-    padding: 5px;
-    max-width: 500px;
-    margin: 0 auto;
+.container {
+	padding: 5px;
+	max-width: 500px;
+	margin: 0 auto;
 }
 
-form {
-    display: none;
+.form-edit-list {
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#error {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 5px 0;
+	padding: 5px;
+}
+
+.form-edit-list,
+.form-add-list {
+	border: 1px solid black;
+}
+
+.form-object {
+	display: flex;
+	width: 90%;
+	margin: 10px auto;
+	justify-content: space-between;
+}
+
+.form-object input,
+.form-object textarea {
+	padding: 5px;
+	width: 70%;
+}
+
+textarea {
+	resize: none;
+}
+
+.form-object button {
+	padding: 7px;
+	margin: 0 auto;
+	width: 100px;
+	border: none;
+}
+
+.form-object button:focus {
+	outline: none;
+}
+
+#update,
+#add {
+	background-color: rgb(0, 184, 0);
+}
+
+#delete {
+	background-color: rgb(251, 70, 70);
 }
